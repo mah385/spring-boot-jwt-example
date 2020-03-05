@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "1b4d7cf9-60c7-434d-b354-74de58fd2ba9",
+		"name": "Spring_Boot_JWT_Example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Generate JWT for Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"rohan_nevatia\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check JWT Validity",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmlmX2h1c3NhaW4iLCJleHAiOjE1ODM0MjczNjcsImlhdCI6MTU4MzQwOTM2N30.dHWLm184kA9BQQF81sRaY7WJTvrwX7m66s8z7aAqBv4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/checkTokenValidity",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"checkTokenValidity"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

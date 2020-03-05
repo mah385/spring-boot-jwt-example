@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------------------
+1. Generate JWT for Login
+
+Request Method: POST
+
+Request URL: localhost:8080/api/authenticate
+
+Request Header:
+Content-Type:application/json
+
+Request Body:
+{
+    "username": "arif_hussain",
+    "password": "qwerty"
+}
+
+Response Body:
+{
+    "tokenValidDuration(in Seconds)": 17999,
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmlmX2h1c3NhaW4iLCJleHAiOjE1ODM0MjczNjcsImlhdCI6MTU4MzQwOTM2N30.dHWLm184kA9BQQF81sRaY7WJTvrwX7m66s8z7aAqBv4"
+}
+---------------------------------------------------------------------------------------------
+2. Check JWT Validity
+
+Request Method: GET
+
+Request URL: localhost:8080/api/checkTokenValidity
+
+Request Header:
+Authorization:Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcmlmX2h1c3NhaW4iLCJleHAiOjE1ODM0MjczNjcsImlhdCI6MTU4MzQwOTM2N30.dHWLm184kA9BQQF81sRaY7WJTvrwX7m66s8z7aAqBv4
+
+Response Body:
+{
+    "tokenValidDuration(in Seconds)": 17810
+}
+---------------------------------------------------------------------------------------------
